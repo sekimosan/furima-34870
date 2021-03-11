@@ -10,56 +10,55 @@
 | email          | string  | null:false        |
 |                |         | unique: true      |
 | birthday       | date    | null:false        |
+| password       | string  | null:false        |
 
  ### Association
 - has_many: items
 - has_many: shopping_logs
-- has_many: info_of_shippings
 
 ## itemsテーブル
 
-|Column          |Type       |Options            |
-|----------------|-----------|-------------------|
-| image          |           |                   |
-| title          | string    | null:false        |
-| price          | integer   | null:false        |
-| shipping_fee   | string    | null:false        |
-| item_pr        | text      | null:false        |
-| user_id        | references| foreign_key :true |
-| item_status    | string    | null:false        |
-| shipping_area  | string    | null:false        |
-| shipping_days  | string    | null:false        |
+|Column             |Type       |Options            |
+|-------------------|-----------|-------------------|
+| image             |           |                   |
+| title             | string    | null:false        |
+| price             | integer   | null:false        |
+| shipping_fee_id   | integer   | null:false        |
+| item_pr           | text      | null:false        |
+| user              | references| foreign_key :true |
+| item_status_id    | integer   | null:false        |
+| prefecture_id     | integer   | null:false        |
+| shipping_day_id   | integer   | null:false        |
+| category_id       | integer   | null:false        |
 
 ### Association
 - belongs_to: user
-- belongs_to: info_of_shipping
-- has_one: shopping_logs
+- has_one: shopping_log
 
 ## shopping_logsテーブル
 
 |Column          |Type       |Options            |
 |----------------|-----------|-------------------|
-| user_id        | references| foreign_key: true |
-| item_id        | references| foreign_key: true |
+| user           | references| foreign_key: true |
+| item           | references| foreign_key: true |
 
 ### Association
 - belongs_to: user
-- belongs_to: items
-- belongs_to: info_of_shipping
+- belongs_to: item
+- has_one: info_of_shipping
 
 ## info_of_shippingテーブル
 
 |Column          |Type       |Options            |
 |----------------|-----------|-------------------|
-| postal_code    | integer   | null:false        |
-| prefecture     | string    | null:false        |
+| postal_code    | string    | null:false        |
+| prefecture_id  | integer   | null:false        |
 | city           | string    | null:false        |
 | address        | string    | null:false        |
 | building       | string    |                   |
-| phone_number   | integer   | null:false        |
+| phone_number   | string    | null:false        |
 |                |           | unique: true      |
+| item           | references| null:false        |
 
 ### Association
-- belongs_to: user
-- has_many: shopping_logs
-- has_many: items
+- belongs_to: shopping_log
