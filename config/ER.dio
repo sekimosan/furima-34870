@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2021-03-11T03:22:09.762Z" agent="5.0 (Macintosh; Intel Mac OS X 11_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.1 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" version="14.2.4" etag="AFRpEczesWnTiePZhxgi" type="embed">
+<mxfile host="65bd71144e" modified="2021-03-11T03:31:54.599Z" agent="5.0 (Macintosh; Intel Mac OS X 11_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.1 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" version="14.2.4" etag="sd6uUPemd4nBPAeGz2-U" type="embed">
     <diagram id="JqoRUaOv8S4FLNKRgEQK" name="ページ1">
         <mxGraphModel dx="881" dy="559" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#CCCCCC" math="0" shadow="0">
             <root>
@@ -43,7 +43,7 @@
                 <mxCell id="114" value="info_of_shippings" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
                     <mxGeometry x="450" y="397.5" width="130" height="35" as="geometry"/>
                 </mxCell>
-                <mxCell id="117" value="&lt;ul&gt;&lt;li&gt;postal_code&lt;/li&gt;&lt;li&gt;prefecture&lt;/li&gt;&lt;li&gt;city&lt;/li&gt;&lt;li&gt;address&lt;/li&gt;&lt;li&gt;phone_number&lt;/li&gt;&lt;li&gt;shopping_log_id&lt;/li&gt;&lt;li&gt;building&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;align=left;" vertex="1" parent="1">
+                <mxCell id="117" value="&lt;ul&gt;&lt;li&gt;postal_code&lt;/li&gt;&lt;li&gt;prefecture_id&lt;/li&gt;&lt;li&gt;city&lt;/li&gt;&lt;li&gt;address&lt;/li&gt;&lt;li&gt;phone_number&lt;/li&gt;&lt;li&gt;shopping_log_id&lt;/li&gt;&lt;li&gt;building&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;align=left;" vertex="1" parent="1">
                     <mxGeometry x="400" y="432.5" width="150" height="197.5" as="geometry"/>
                 </mxCell>
                 <mxCell id="134" style="edgeStyle=none;shape=link;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;startArrow=none;startFill=0;width=4;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="121" target="101">
