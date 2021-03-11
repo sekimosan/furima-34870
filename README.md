@@ -1,24 +1,62 @@
-# README
+## usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+|Column                 |Type     |Options                      |
+|-----------------------|---------|-----------------------------|
+| last_name             | string  | null:false                  |
+| first_name            | string  | null:false                  |
+| last_name_kana        | string  | null:false                  |
+| first_name_kana       | string  | null:false                  |
+| nickname              | string  | null:false                  |
+| email                 | string  | null:false,unique: true     |
+| birthday              | date    | null:false                  |
+| encrypted_password    | string  | null:false                  |
 
-Things you may want to cover:
+ ### Association
+- has_many: items
+- has_many: shopping_logs
 
-* Ruby version
+## itemsテーブル
 
-* System dependencies
+|Column             |Type       |Options                   |
+|-------------------|-----------|--------------------------|
+| image             |           | ActiveStorageを用いて実装  |
+| title             | string    | null:false               |
+| price             | integer   | null:false               |
+| shipping_fee_id   | integer   | null:false               |
+| item_pr           | text      | null:false               |
+| user              | references| foreign_key :true        |
+| item_status_id    | integer   | null:false               |
+| prefecture_id     | integer   | null:false               |
+| shipping_day_id   | integer   | null:false               |
+| category_id       | integer   | null:false               |
 
-* Configuration
+### Association
+- belongs_to: user
+- has_one: shopping_log
 
-* Database creation
+## shopping_logsテーブル
 
-* Database initialization
+|Column          |Type       |Options            |
+|----------------|-----------|-------------------|
+| user           | references| foreign_key: true |
+| item           | references| foreign_key: true |
 
-* How to run the test suite
+### Association
+- belongs_to: user
+- belongs_to: item
+- has_one: info_of_shipping
 
-* Services (job queues, cache servers, search engines, etc.)
+## info_of_shippingテーブル
 
-* Deployment instructions
+|Column          |Type       |Options                       |
+|----------------|-----------|------------------------------|
+| postal_code    | string    | null:false                   |
+| prefecture_id  | integer   | null:false                   |
+| city           | string    | null:false                   |
+| address        | string    | null:false                   |
+| building       | string    |                              |
+| phone_number   | string    | null:false                   |
+| shopping_log   | references| null:false                   |
 
-* ...
+### Association
+- belongs_to: shopping_log
