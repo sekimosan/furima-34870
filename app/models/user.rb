@@ -12,7 +12,8 @@ class User < ApplicationRecord
     validates :last_name_kana
     validates :first_name_kana
   end  
-  validates :nickname, presence: true
-  validates :birthday, presence: true 
-    
+  with_options presence: true do
+    validates :nickname
+    validates :birthday 
+  end  
 end
