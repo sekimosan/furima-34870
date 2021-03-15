@@ -11,13 +11,9 @@ class Item < ApplicationRecord
 
 
   with_options presence: true  do
-    validates :title , :image ,:item_pr
-    validates :price , format: { with: /\d[300-9999999]/ }
+    validates :title , :image ,:item_pr, :category_id, :item_status_id, :shipping_fee_id, :shipping_day_id, :prefecture_id
   end  
-  
-  with_options numericality: { other_than: 1 } do
-    validates :item_status_id, :category_id, :prefecture_id, :shipping_day_id, :shipping_fee_id
-  end  
+  validates :price ,{presence: true, numericality: {greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}}
 
  
 end
