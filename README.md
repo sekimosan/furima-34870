@@ -24,7 +24,7 @@
 | price             | integer   | null:false               |
 | shipping_fee_id   | integer   | null:false               |
 | item_pr           | text      | null:false               |
-| user              | references| foreign_key :true        |
+| user              | references| foreign_key: true        |
 | item_status_id    | integer   | null:false               |
 | prefecture_id     | integer   | null:false               |
 | shipping_day_id   | integer   | null:false               |
