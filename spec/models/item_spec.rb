@@ -52,17 +52,17 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Shipping day can't be blank")
       end
       it "priceがないと保存されない" do
-        @item.price = " "
+        @item.price = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
       it "priceが300円未満だと保存されない" do
-        @item.price = "299"
+        @item.price = 299
         @item.valid? 
         expect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
       end
       it "priceが10000000円以上だと保存されない" do
-        @item.price = "10000000"
+        @item.price = 10000000
         @item.valid?
         expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")  
       end
@@ -71,7 +71,16 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is not a number")
       end
-      
+      it "priceが半角英数混合では保存されない"  do
+        @item.price = "1fg5"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is not a number")
+      end  
+      it "priceが半角英語だけでは保存されない" do
+        @item.price ="aaaaa" 
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is not a number")
+      end
     end                         
   end  
 end

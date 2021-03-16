@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :item do
     title   {"ボンゴレビアンコ"}  
-    price     {"1500"}
+    price     {1500}
     item_pr   {"美味しい"}
     category_id  {Faker::Number.between(from: 1,to: 10)}
     shipping_day_id {Faker::Number.between(from: 1,to: 3)}
