@@ -13,7 +13,7 @@
 
  ### Association
 - has_many: items
-- has_many: shopping_logs
+- has_many: orders
 
 ## itemsテーブル
 
@@ -59,4 +59,4 @@
 | order          | references| null:false                   |
 
 ### Association
-- belongs_to: orders
+- belongs_to: order
