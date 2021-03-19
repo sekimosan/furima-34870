@@ -32,9 +32,9 @@
 
 ### Association
 - belongs_to: user
-- has_one: shopping_log
+- has_one: order
 
-## shopping_logsテーブル
+## ordersテーブル
 
 |Column          |Type       |Options            |
 |----------------|-----------|-------------------|
@@ -44,19 +44,19 @@
 ### Association
 - belongs_to: user
 - belongs_to: item
-- has_one: info_of_shipping
+- has_one: address
 
-## info_of_shippingテーブル
+## addressesテーブル
 
 |Column          |Type       |Options                       |
 |----------------|-----------|------------------------------|
 | postal_code    | string    | null:false                   |
 | prefecture_id  | integer   | null:false                   |
 | city           | string    | null:false                   |
-| address        | string    | null:false                   |
+| house_number   | string    | null:false                   |
 | building       | string    |                              |
 | phone_number   | string    | null:false                   |
-| shopping_log   | references| null:false                   |
+| order          | references| null:false                   |
 
 ### Association
-- belongs_to: shopping_log
+- belongs_to: orders
