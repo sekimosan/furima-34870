@@ -46,7 +46,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:title ,:price ,:item_pr ,:image ,:item_status_id ,:category_id ,:shipping_day_id ,:shipping_fee_id ,:prefecture_id).merge(user_id: current_user.id)
   end  
   def move_to_index
-    unless current_user.id == @item.user.id
+    unless (current_user.id == @item.user.id) and @item.order.blank?
       redirect_to items_path
     end 
   end   

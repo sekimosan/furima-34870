@@ -1,11 +1,13 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
+  before_action :define_item
+  before_action :move_to_top_page
+
   def index
-    @item = Item.find(params[:item_id])
     @order_address = OrderAddress.new
   end
 
   def create
-    @item = Item.find(params[:item_id])
     @order_address = OrderAddress.new(order_params)
     if @order_address.valid?
       pay_item
@@ -29,4 +31,13 @@ class OrdersController < ApplicationController
       currency: "jpy"
     )
   end  
+  def define_item
+    @item = Item.find(params[:item_id])
+  end   
+  def move_to_top_page
+    unless @item.order.blank?
+      redirect_to root_path
+    end  
+  end  
+
 end
