@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
     @item = Item.find(params[:item_id])
   end   
   def move_to_top_page
-    unless (current_user.id != @item.user.id) and @item.order.blank?
+    unless (current_user.id != @item.user.id) && @item.order.blank?
       redirect_to root_path
     end  
   end  
